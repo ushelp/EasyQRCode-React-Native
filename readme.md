@@ -1,4 +1,4 @@
-# React Native QRCode
+# EasyQRCode React Native
 
 A QRCode component for React Native. Support Dot style, Logo, Background image, Colorful, Title etc. settings. Support Angular, Vue.js, React, Next.js framework. Support binary(hex) data mode.
 
