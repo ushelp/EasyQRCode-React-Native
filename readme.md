@@ -97,7 +97,7 @@ A QRCode component for React Native. Support Dot style, Logo, Background image, 
 npm install react-native-webview
 react-native link react-native-webview
 
-npm install react-native-qrcode
+npm install easyqrcode-react-native
 ```
 
 ## Basic Usages
