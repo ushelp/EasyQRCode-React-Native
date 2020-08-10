@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 3.7.0
+ * Version 3.7.1
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -1506,7 +1506,7 @@ QRCode.prototype.makeCode = function(sText) {
  */
 QRCode.CorrectLevel = QRErrorCorrectLevel;
 
-// module.exports = QRCode;
 export {
-    QRCode
+    QRCode,
+    Canvas
 };

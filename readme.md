@@ -108,7 +108,7 @@ import {
 } from 'react-native';
 
 // 1. Import 
-import {QRCode, Canvas} from './easyqrcodejs';
+import {QRCode, Canvas} from 'easyqrcode-react-native';
 
 class App extends  Component{
     
