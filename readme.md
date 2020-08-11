@@ -241,66 +241,66 @@ var qrcode = new QRCode(canvas_object, options_object);
 }
 ```
 
-| Option | Required | Type | Defaults | Description | Compatibility |
-| --- | --- |--- | --- |--- | --- |
-| Basic options| --- | ---|---|---|---|
-| **text** | Y | String |`''` |  Text | &nbsp; |
-| **width** | N | Number | `256` |  Width |  &nbsp; |
-| **height** | N | Number | `256` |  Height |  &nbsp; |
-| **colorDark** | N | String | `#000000` | Dark CSS color, `transparent`|  &nbsp; |
-| **colorLight** | N | String | `#ffffff` | Light CSS color, `transparent` |  &nbsp; |
-| **correctLevel** | N | Enum | `QRCode.CorrectLevel.H` | `QRCode.CorrectLevel.H`<br/>`QRCode.CorrectLevel.Q` <br/> `QRCode.CorrectLevel.M` <br/> `QRCode.CorrectLevel.L`|  &nbsp; |
-| **dotScale** | N | Number | `1.0` |Dot style required Patterns. Ranges: `0-1.0` | &nbsp; |
-| Quiet Zone| --- | ---|---|---|---|
-| **quietZone** | N | Number | `0` |  Quiet Zone size |  &nbsp; |
-| **quietZoneColor** | N | String | `transparent` |  Background CSS color to Quiet Zone |  &nbsp; |
-| Logo options| --- | ---|---|---|---|
-| **logo** | N | String | `undefined` |  support: Static Image Resources, Network Images(`http://`, `https://`, `ftp://`), Base64 Uri Data Images |  &nbsp; |
-| **logoWidth** | N | Number | `undefined` |  Height |  &nbsp; |
-| **logoHeight** | N | Number | `undefined` |  Width |  &nbsp; |
-| **logoBackgroundTransparent** | N | Boolean | `false` |  Whether the background transparent image(`PNG`) shows transparency. When `true`, `logoBackgroundColor` is invalid |  &nbsp; |
-| **logoBackgroundColor** | N | String | `#ffffff` |  Set Background CSS Color when image background transparent. Valid when `logoBackgroundTransparent` is `false` |  &nbsp; |
-| Backgroud Image options|  ---|--- |---|---|---|
-| **backgroundImage** | N | String | `undefined` | Background Image Path or Base64 encoded Image. If use relative address, relative to `easy.qrcode.min.js` |  &nbsp; |
-| **backgroundImageAlpha** | N | Number | `1.0` |  Background image transparency. Ranges: `0-1.0`  |  &nbsp; |
-| **autoColor** | N | Boolean | `false` |  Automatic color adjustment |  &nbsp; |
-| Posotion Pattern Color options| --- | ---|---|---|---|
-| **PO** | N | String | `undefined` | Global Posotion Outer CSS color. if not set, the defaut is `colorDark` |  &nbsp; |
-| **PI** | N | String | `undefined` | Global Posotion Inner CSS color. if not set, the defaut is `colorDark` |  &nbsp; |
-| **PO_TL** | N | String | `undefined` | Posotion Outer CSS color - Top Left |  &nbsp; |
-| **PI_TL** | N | String | `undefined` | Posotion Inner CSS color - Top Left |  &nbsp; |
-| **PO_TR** | N | String | `undefined` | Posotion Outer CSS color - Top Right |  &nbsp; |
-| **PI_TR** | N | String | `undefined` | Posotion Inner CSS color - Top Right |  &nbsp; |
-| **PO_BL** | N | String | `undefined` | Posotion Outer CSS color - Bottom Left |  &nbsp; |
-| **PI_BL** | N | String | `undefined` | Posotion Inner CSS color - Bottom Left |  &nbsp; |
-| Alignment Color options| --- |--- |---|---|---|
-| **AO** | N | String | `undefined` | Alignment Outer CSS color. if not set, the defaut is `colorDark` |  &nbsp; |
-| **AI** | N | String | `undefined` | Alignment Inner CSS color. if not set, the defaut is `colorDark` |  &nbsp; |
-| Timing Pattern Color options| --- | ---|---|---|---|
-| **timing** | N | String | `undefined` | Global Timing CSS color. if not set, the defaut is `colorDark` |  &nbsp; |
-| **timing_H** | N | String | `undefined` | Horizontal timing CSS color |  &nbsp; |
-| **timing_V** | N | String | `undefined` | Vertical timing CSS color |  &nbsp; |
-| Title options| --- | ---|---|---|---|
-| **title** | N | String | `''` |  |  &nbsp; |
-| **titleFont** | N | String | `bold 16px Arial` | CSS Font |  &nbsp; |
-| **titleColor** | N | String | `#000000` | CSS color |  &nbsp; |
-| **titleBackgroundColor** | N | String | `#ffffff` | CSS color|  &nbsp; |
-| **titleHeight** | N | Number | `0` | Title Height, Include subTitle |  &nbsp; |
-| **titleTop** | N | Number | `30` | draws y coordinates.|  &nbsp; |
-| SubTitle options| --- | ---|---|---|---|
-| **subTitle** | N | String | `''` |  |  &nbsp; |
-| **subTitleFont** | N | String | `14px Arial` | CSS Font |  &nbsp; |
-| **subTitleColor** | N | String | `#4F4F4F` | CSS color |  &nbsp; |
-| **subTitleTop** | N | Number | `0` | draws y coordinates. default is 0|  &nbsp; |
-| Event Handler options| --- | ---|---|---|---|
-| **onRenderingStart(qrCodeOptions)** | N | Function | `undefined` | Callback function when the rendering start. can use to hide loading state or handling.  |  &nbsp; |
-| **onRenderingEnd(qrCodeOptions, base64DataFn)** | N | Function | `undefined` | Callback function when the rendering ends. `base64DataFn` parameter is the base64 data execution function of QRCode, returns a Promise that resolves to DataURL.   |  &nbsp; |
-| Version options| --- | ---|---|---|---|
-| **version** | N | Number | `0` | The symbol versions of QR Code range from Version `1` to Version `40`. default 0 means automatically choose the closest version based on the text length. [Information capacity and versions of QR Codes](https://www.qrcode.com/en/about/version.html)  **NOTE**: If you set a value less than the minimum version available for text, the minimum version is automatically used. |  &nbsp; |
-| Tooltip options| --- | ---|---|---|---|
-| **tooltip** | N | Boolean | `false` | Whether set the QRCode Text as the title attribute value of the QRCode div. |  &nbsp; |
-| Binary(hex) data model options| --- | ---|---|---|---|
-| **binary** | N | Boolean | `false` | Whether it is binary mode, default is text mode.  |  &nbsp; |
+| Option | Required | Type | Defaults | Description |
+| --- | --- |--- | --- |--- | 
+| Basic options| --- | ---|---|---|
+| **text** | Y | String |`''` |  Text |
+| **width** | N | Number | `256` |  Width | 
+| **height** | N | Number | `256` |  Height | 
+| **colorDark** | N | String | `#000000` | Dark CSS color, `transparent`|
+| **colorLight** | N | String | `#ffffff` | Light CSS color, `transparent` |  
+| **correctLevel** | N | Enum | `QRCode.CorrectLevel.H` | `QRCode.CorrectLevel.H`<br/>`QRCode.CorrectLevel.Q` <br/> `QRCode.CorrectLevel.M` <br/> `QRCode.CorrectLevel.L`|  
+| **dotScale** | N | Number | `1.0` |Dot style required Patterns. Ranges: `0-1.0` |
+| Quiet Zone| --- | ---|---|---|
+| **quietZone** | N | Number | `0` |  Quiet Zone size | 
+| **quietZoneColor** | N | String | `transparent` |  Background CSS color to Quiet Zone |
+| Logo options| --- | ---|---|---|
+| **logo** | N | String | `undefined` |  support: Static Image Resources, Network Images(`http://`, `https://`, `ftp://`), Base64 Uri Data Images |  
+| **logoWidth** | N | Number | `undefined` |  Height | 
+| **logoHeight** | N | Number | `undefined` |  Width |
+| **logoBackgroundTransparent** | N | Boolean | `false` |  Whether the background transparent image(`PNG`) shows transparency. When `true`, `logoBackgroundColor` is invalid |  
+| **logoBackgroundColor** | N | String | `#ffffff` |  Set Background CSS Color when image background transparent. Valid when `logoBackgroundTransparent` is `false` | 
+| Backgroud Image options|  ---|--- |---|---|
+| **backgroundImage** | N | String | `undefined` | Background Image Path or Base64 encoded Image. If use relative address, relative to `easy.qrcode.min.js` |  
+| **backgroundImageAlpha** | N | Number | `1.0` |  Background image transparency. Ranges: `0-1.0`  | 
+| **autoColor** | N | Boolean | `false` |  Automatic color adjustment | 
+| Posotion Pattern Color options| --- | ---|---|---|
+| **PO** | N | String | `undefined` | Global Posotion Outer CSS color. if not set, the defaut is `colorDark` | 
+| **PI** | N | String | `undefined` | Global Posotion Inner CSS color. if not set, the defaut is `colorDark` |  
+| **PO_TL** | N | String | `undefined` | Posotion Outer CSS color - Top Left | 
+| **PI_TL** | N | String | `undefined` | Posotion Inner CSS color - Top Left | 
+| **PO_TR** | N | String | `undefined` | Posotion Outer CSS color - Top Right | 
+| **PI_TR** | N | String | `undefined` | Posotion Inner CSS color - Top Right |  
+| **PO_BL** | N | String | `undefined` | Posotion Outer CSS color - Bottom Left |  
+| **PI_BL** | N | String | `undefined` | Posotion Inner CSS color - Bottom Left |  
+| Alignment Color options| --- |--- |---|---|
+| **AO** | N | String | `undefined` | Alignment Outer CSS color. if not set, the defaut is `colorDark` | 
+| **AI** | N | String | `undefined` | Alignment Inner CSS color. if not set, the defaut is `colorDark` | 
+| Timing Pattern Color options| --- | ---|---|---|
+| **timing** | N | String | `undefined` | Global Timing CSS color. if not set, the defaut is `colorDark` | 
+| **timing_H** | N | String | `undefined` | Horizontal timing CSS color |  
+| **timing_V** | N | String | `undefined` | Vertical timing CSS color |  
+| Title options| --- | ---|---|---|
+| **title** | N | String | `''` |  | 
+| **titleFont** | N | String | `bold 16px Arial` | CSS Font |  
+| **titleColor** | N | String | `#000000` | CSS color | 
+| **titleBackgroundColor** | N | String | `#ffffff` | CSS color| 
+| **titleHeight** | N | Number | `0` | Title Height, Include subTitle | 
+| **titleTop** | N | Number | `30` | draws y coordinates.|  
+| SubTitle options| --- | ---|---|---|
+| **subTitle** | N | String | `''` |  |  
+| **subTitleFont** | N | String | `14px Arial` | CSS Font |  
+| **subTitleColor** | N | String | `#4F4F4F` | CSS color |  
+| **subTitleTop** | N | Number | `0` | draws y coordinates. default is 0|  
+| Event Handler options| --- | ---|---|---|
+| **onRenderingStart(qrCodeOptions)** | N | Function | `undefined` | Callback function when the rendering start. can use to hide loading state or handling.  |  
+| **onRenderingEnd(qrCodeOptions, base64DataFn)** | N | Function | `undefined` | Callback function when the rendering ends. `base64DataFn` parameter is the base64 data execution function of QRCode, returns a Promise that resolves to DataURL.   | 
+| Version options| --- | ---|---|---|
+| **version** | N | Number | `0` | The symbol versions of QR Code range from Version `1` to Version `40`. default 0 means automatically choose the closest version based on the text length. [Information capacity and versions of QR Codes](https://www.qrcode.com/en/about/version.html)  **NOTE**: If you set a value less than the minimum version available for text, the minimum version is automatically used. | 
+| Tooltip options| --- | ---|---|---|
+| **tooltip** | N | Boolean | `false` | Whether set the QRCode Text as the title attribute value of the QRCode div. | 
+| Binary(hex) data model options| --- | ---|---|---|
+| **binary** | N | Boolean | `false` | Whether it is binary mode, default is text mode.  | 
 
 
 ### Method
@@ -354,6 +354,12 @@ var options = {
     
     // ...
 } 
+```
+
+If you encounter `Tainted canvases may not be exported` error. Please convert your images(`logo`, `background`, `...`) to Base64 Data URL.
+
+```
+Error: Failed to execute 'toDataURL' on 'HTMLCanvasElement': Tainted canvases may not be exported.
 ```
 
 ## License
