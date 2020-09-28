@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 3.7.2
+ * Version 3.7.3
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -780,7 +780,7 @@ QRRSBlock.RS_BLOCK_TABLE = [
     [5, 109, 87, 1, 110, 88],
     [5, 65, 41, 5, 66, 42],
     [5, 54, 24, 7, 55, 25],
-    [11, 36, 12],
+    [11, 36, 12, 7, 37, 13],
     [5, 122, 98, 1, 123, 99],
     [7, 73, 45, 3, 74, 46],
     [15, 43, 19, 2, 44, 20],
