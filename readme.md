@@ -168,7 +168,7 @@ var qrcode = new QRCode(canvas_object, options_object);
     // ====== Logo
     /*
     logo:"https://avatars1.githubusercontent.com/u/4082017?s=160&v=4",  //  support: Static Image Resources, Network Images, Base64 Uri Data Images
-    logoWidth:80, // widht. default is automatic width
+    logoWidth:80, // width. default is automatic width
     logoHeight:80 // height. default is automatic height
     logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
     logoBackgroundTransparent:false, // Whether use transparent image, default is false
