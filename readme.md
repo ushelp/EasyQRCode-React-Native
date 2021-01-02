@@ -158,8 +158,8 @@ var qrcode = new QRCode(canvas_object, options_object);
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H, // L, M, Q, H
     
-     // ====== dotScale
-     /*
+    // ====== dotScale
+    /*
     dotScale: 1, // For body block, must be greater than 0, less than or equal to 1. default is 1
     
     dotScaleTiming: 1, // Dafault for timing block , must be greater than 0, less than or equal to 1. default is 1
@@ -190,7 +190,9 @@ var qrcode = new QRCode(canvas_object, options_object);
     /*
     backgroundImage: '', // support: Static Image Resources, Network Images, Base64 Uri Data Images
     backgroundImageAlpha: 1, // Background image transparency, value between 0 and 1. default is 1. 
-    autoColor: false,
+    autoColor: false, // Automatic color adjustment(for data block)
+    autoColorDark: "rgba(0, 0, 0, .6)", // Automatic color: dark CSS color
+    autoColorLight: "rgba(255, 255, 255, .7)", // Automatic color: light CSS color
     */
     
     // ====== Colorful
@@ -283,7 +285,9 @@ var qrcode = new QRCode(canvas_object, options_object);
 | Backgroud Image options|  ---|--- |---|---|
 | **backgroundImage** | N | String | `undefined` | Background Image Path or Base64 encoded Image. If use relative address, relative to `easy.qrcode.min.js` |  
 | **backgroundImageAlpha** | N | Number | `1.0` |  Background image transparency. Ranges: `0-1.0`  | 
-| **autoColor** | N | Boolean | `false` |  Automatic color adjustment | 
+| **autoColor** | N | Boolean | `false` |  Automatic color adjustment(for data block) | 
+| **autoColorDark** | N | String | `rgba(0, 0, 0, .6)` |  Automatic color: dark CSS color  |
+| **autoColorLight** | N | String | `rgba(255, 255, 255, .7)` |  Automatic color: light CSS color |
 | Posotion Pattern Color options| --- | ---|---|---|
 | **PO** | N | String | `undefined` | Global Posotion Outer CSS color. if not set, the defaut is `colorDark` | 
 | **PI** | N | String | `undefined` | Global Posotion Inner CSS color. if not set, the defaut is `colorDark` |  
