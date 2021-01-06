@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 3.9.0
+ * Version 3.9.1
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -1107,18 +1107,21 @@ Drawing.prototype.draw = function(oQRCode) {
     var t = this;
 
     function drawQuietZoneColor() {
-        // top
-        _oContext.lineWidth = 0;
-        _oContext.fillStyle = _htOption.quietZoneColor;
+        if (_htOption.quietZone > 0 && _htOption.quietZoneColor) {
+            // top
+            _oContext.lineWidth = 0;
+            _oContext.fillStyle = _htOption.quietZoneColor;
 
-        _oContext.fillRect(0, 0, t._canvas.width, _htOption.quietZone);
-        // left
-        _oContext.fillRect(0, _htOption.quietZone, _htOption.quietZone, t._canvas.height - _htOption.quietZone * 2);
-        // right
-        _oContext.fillRect(t._canvas.width - _htOption.quietZone, _htOption.quietZone, _htOption.quietZone, t._canvas
-            .height - _htOption.quietZone * 2);
-        // bottom
-        _oContext.fillRect(0, t._canvas.height - _htOption.quietZone, t._canvas.width, _htOption.quietZone);
+            _oContext.fillRect(0, 0, t._canvas.width, _htOption.quietZone);
+            // left
+            _oContext.fillRect(0, _htOption.quietZone, _htOption.quietZone, t._canvas.height - _htOption.quietZone *
+                2);
+            // right
+            _oContext.fillRect(t._canvas.width - _htOption.quietZone, _htOption.quietZone, _htOption.quietZone, t._canvas
+                .height - _htOption.quietZone * 2);
+            // bottom
+            _oContext.fillRect(0, t._canvas.height - _htOption.quietZone, t._canvas.width, _htOption.quietZone);
+        }
     }
 
     if (_htOption.backgroundImage) {
@@ -1333,9 +1336,7 @@ Drawing.prototype.draw = function(oQRCode) {
 
                 _this._bIsPainted = true;
 
-                if (_htOption.quietZone > 0 && _htOption.quietZoneColor) {
-                    drawQuietZoneColor();
-                }
+                drawQuietZoneColor();
                 if (_htOption.onRenderingEnd) {
                     _htOption.onRenderingEnd(_htOption, function() {
                         return _this._canvas.toDataURL();
@@ -1352,10 +1353,8 @@ Drawing.prototype.draw = function(oQRCode) {
 
             logoImg.src = _htOption.logo;
         } else {
+            drawQuietZoneColor();
             this._bIsPainted = true;
-            if (_htOption.quietZone > 0 && _htOption.quietZoneColor) {
-                drawQuietZoneColor();
-            }
 
             if (_htOption.onRenderingEnd) {
                 _htOption.onRenderingEnd(_htOption, function() {
