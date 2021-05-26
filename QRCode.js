@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 3.9.5
+ * Version 4.0.0
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -149,7 +149,8 @@ QRCodeModel.prototype = {
             if (row + r <= -1 || this.moduleCount <= row + r) continue;
             for (var c = -1; c <= 7; c++) {
                 if (col + c <= -1 || this.moduleCount <= col + c) continue;
-                if ((0 <= r && r <= 6 && (c == 0 || c == 6)) || (0 <= c && c <= 6 && (r == 0 || r == 6)) || (2 <=
+                if ((0 <= r && r <= 6 && (c == 0 || c == 6)) || (0 <= c && c <= 6 && (r == 0 || r == 6)) || (
+                        2 <=
                         r && r <= 4 &&
                         2 <= c && c <= 4)) {
                     this.modules[row + r][col + c][0] = true;
@@ -611,7 +612,8 @@ var QRUtil = {
                 if (qrCode.isDark(row, col) && !qrCode.isDark(row, col + 1) && qrCode.isDark(row, col + 2) &&
                     qrCode.isDark(
                         row,
-                        col + 3) && qrCode.isDark(row, col + 4) && !qrCode.isDark(row, col + 5) && qrCode.isDark(
+                        col + 3) && qrCode.isDark(row, col + 4) && !qrCode.isDark(row, col + 5) && qrCode
+                    .isDark(
                         row, col + 6)) {
                     lostPoint += 40;
                 }
@@ -664,8 +666,9 @@ for (var i = 0; i < 8; i++) {
     QRMath.EXP_TABLE[i] = 1 << i;
 }
 for (var i = 8; i < 256; i++) {
-    QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4] ^ QRMath.EXP_TABLE[i - 5] ^ QRMath.EXP_TABLE[i - 6] ^ QRMath.EXP_TABLE[
-        i - 8];
+    QRMath.EXP_TABLE[i] = QRMath.EXP_TABLE[i - 4] ^ QRMath.EXP_TABLE[i - 5] ^ QRMath.EXP_TABLE[i - 6] ^ QRMath
+        .EXP_TABLE[
+            i - 8];
 }
 for (var i = 0; i < 255; i++) {
     QRMath.LOG_TABLE[QRMath.EXP_TABLE[i]] = i;
@@ -1117,7 +1120,8 @@ Drawing.prototype.draw = function(oQRCode) {
             _oContext.fillRect(0, _htOption.quietZone, _htOption.quietZone, t._canvas.height - _htOption.quietZone *
                 2);
             // right
-            _oContext.fillRect(t._canvas.width - _htOption.quietZone, _htOption.quietZone, _htOption.quietZone, t._canvas
+            _oContext.fillRect(t._canvas.width - _htOption.quietZone, _htOption.quietZone, _htOption.quietZone, t
+                ._canvas
                 .height - _htOption.quietZone * 2);
             // bottom
             _oContext.fillRect(0, t._canvas.height - _htOption.quietZone, t._canvas.width, _htOption.quietZone);
@@ -1162,7 +1166,8 @@ Drawing.prototype.draw = function(oQRCode) {
 
                 var bIsDark = oQRCode.isDark(row, col);
 
-                var eye = oQRCode.getEye(row, col); // { isDark: true/false, type: PO_TL, PI_TL, PO_TR, PI_TR, PO_BL, PI_BL };
+                var eye = oQRCode.getEye(row,
+                    col); // { isDark: true/false, type: PO_TL, PI_TL, PO_TR, PI_TR, PO_BL, PI_BL };
 
                 var nowDotScale = _htOption.dotScale;
 
@@ -1234,7 +1239,7 @@ Drawing.prototype.draw = function(oQRCode) {
                     } else {
                         nowDotScale = 1;
                     }
-                    
+
                     if (_htOption.backgroundImage && _htOption.autoColor) {
                         dColor = ((eye.type == 'AO') ? _htOption.AI : _htOption.AO) ||
                             _htOption.autoColorDark;
@@ -1267,13 +1272,15 @@ Drawing.prototype.draw = function(oQRCode) {
 
                         if (_htOption.backgroundImage) {
 
-                            _oContext.fillRect(nLeft + nWidth * (1 - nowDotScale) / 2, _htOption.titleHeight + nTop +
+                            _oContext.fillRect(nLeft + nWidth * (1 - nowDotScale) / 2, _htOption.titleHeight +
+                                nTop +
                                 nHeight * (1 -
                                     nowDotScale) / 2, nWidth * nowDotScale, nHeight * nowDotScale);
 
                         } else {
 
-                            _oContext.fillRect(nLeft + nWidth * (1 - nowDotScale) / 2, _htOption.titleHeight + nTop +
+                            _oContext.fillRect(nLeft + nWidth * (1 - nowDotScale) / 2, _htOption.titleHeight +
+                                nTop +
                                 nHeight * (1 -
                                     nowDotScale) / 2, nWidth * nowDotScale, nHeight * nowDotScale);
 
@@ -1295,13 +1302,15 @@ Drawing.prototype.draw = function(oQRCode) {
             _oContext.font = _htOption.titleFont;
             _oContext.fillStyle = _htOption.titleColor;
             _oContext.textAlign = 'center';
-            _oContext.fillText(_htOption.title, t._canvas.width / 2, this._htOption.quietZone + this._htOption.titleTop);
+            _oContext.fillText(_htOption.title, t._canvas.width / 2, this._htOption.quietZone + this._htOption
+                .titleTop);
         }
 
         if (_htOption.subTitle) {
             _oContext.font = _htOption.subTitleFont;
             _oContext.fillStyle = _htOption.subTitleColor;
-            _oContext.fillText(_htOption.subTitle, t._canvas.width / 2, this._htOption.quietZone + this._htOption.subTitleTop);
+            _oContext.fillText(_htOption.subTitle, t._canvas.width / 2, this._htOption.quietZone + this._htOption
+                .subTitleTop);
         }
 
         if (_htOption.logo) {
@@ -1315,26 +1324,18 @@ Drawing.prototype.draw = function(oQRCode) {
                     imgContainerW = imgContainerH;
                 }
 
-                if (_htOption.logoWidth) {
+                if (_htOption.logoMaxWidth) {
+                    imgContainerW = Math.round(_htOption.logoMaxWidth);
+                } else if (_htOption.logoWidth) {
                     imgContainerW = Math.round(_htOption.logoWidth);
                 }
-                if (_htOption.logoHeight) {
+
+                if (_htOption.logoMaxHeight) {
+                    imgContainerH = Math.round(_htOption.logoMaxHeight);
+                } else if (_htOption.logoHeight) {
                     imgContainerH = Math.round(_htOption.logoHeight);
                 }
 
-                var imgContainerX = (_htOption.width + _htOption.quietZone * 2 - imgContainerW) / 2;
-                var imgContainerY = (_htOption.height + _htOption.titleHeight + _htOption.quietZone *
-                    2 - imgContainerH) / 2;
-
-                // Did Not Use Transparent Logo Image
-                if (!_htOption.logoBackgroundTransparent) {
-                    //if (!_htOption.logoBackgroundColor) {
-                    //_htOption.logoBackgroundColor = '#ffffff';
-                    //}
-                    _oContext.fillStyle = _htOption.logoBackgroundColor;
-
-                    _oContext.fillRect(imgContainerX, imgContainerY, imgContainerW, imgContainerH);
-                }
                 var nw;
                 var nh;
                 if (typeof img.naturalWidth == "undefined") {
@@ -1347,10 +1348,47 @@ Drawing.prototype.draw = function(oQRCode) {
                     nh = img.naturalHeight;
                 }
 
+                if (_htOption.logoMaxWidth || _htOption.logoMaxHeight) {
+                    if (_htOption.logoMaxWidth && nw <= imgContainerW) {
+                        imgContainerW = nw;
+                    }
+
+                    if (_htOption.logoMaxHeight && nh <= imgContainerH) {
+                        imgContainerH = nh;
+                    }
+                    if (nw <= imgContainerW && nh <= imgContainerH) {
+                        imgContainerW = nw;
+                        imgContainerH = nh;
+                    }
+                }
+
+                var imgContainerX = (_htOption.width + _htOption.quietZone * 2 - imgContainerW) / 2;
+                var imgContainerY = (_htOption.height + _htOption.titleHeight + _htOption.quietZone *
+                    2 - imgContainerH) / 2;
+
                 var imgScale = Math.min(imgContainerW / nw, imgContainerH / nh);
                 var imgW = nw * imgScale;
                 var imgH = nh * imgScale;
 
+                if (_htOption.logoMaxWidth || _htOption.logoMaxHeight) {
+                    imgContainerW = imgW;
+                    imgContainerH = imgH;
+                    imgContainerX = (_htOption.width + _htOption.quietZone * 2 - imgContainerW) / 2;
+                    imgContainerY = (_htOption.height + _htOption.titleHeight + _htOption
+                        .quietZone *
+                        2 - imgContainerH) / 2;
+
+                }
+
+                // Did Not Use Transparent Logo Image
+                if (!_htOption.logoBackgroundTransparent) {
+                    //if (!_htOption.logoBackgroundColor) {
+                    //_htOption.logoBackgroundColor = '#ffffff';
+                    //}
+                    _oContext.fillStyle = _htOption.logoBackgroundColor;
+
+                    _oContext.fillRect(imgContainerX, imgContainerY, imgContainerW, imgContainerH);
+                }
                 _oContext.drawImage(img, imgContainerX + (imgContainerW - imgW) / 2, imgContainerY +
                     (imgContainerH - imgH) / 2, imgW, imgH);
 
@@ -1449,6 +1487,8 @@ function QRCode(canvas, vOption) {
         logo: undefined,
         logoWidth: undefined,
         logoHeight: undefined,
+        logoMaxWidth: undefined,
+        logoMaxHeight: undefined,
         logoBackgroundColor: '#ffffff',
         logoBackgroundTransparent: false,
 
