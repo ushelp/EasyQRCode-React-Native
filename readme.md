@@ -282,8 +282,8 @@ var qrcode = new QRCode(canvas_object, options_object);
 | **logo** | N | String | `undefined` |  support: Static Image Resources, Network Images(`http://`, `https://`, `ftp://`), Base64 Uri Data Images |  
 | **logoWidth** | N | Number | `width/3.5` |  Fixed logo width. |  
 | **logoHeight** | N | Number | `height/3.5` |  fixed logo height. | 
-| **maxLogoWidth** | N | Number | `undefined` |  Maximum logo width. if set will ignore `logoWidth` value. | 
-| **maxLogoHeight** | N | Number | `undefined` |  Maximum logo height. if set will ignore `logoHeight` value. |  
+| **logoMaxWidth** | N | Number | `undefined` |  Maximum logo width. if set will ignore `logoWidth` value. | 
+| **logoMaxHeight** | N | Number | `undefined` |  Maximum logo height. if set will ignore `logoHeight` value. |  
 | **logoBackgroundTransparent** | N | Boolean | `false` |  Whether the background transparent image(`PNG`) shows transparency. When `true`, `logoBackgroundColor` is invalid |  
 | **logoBackgroundColor** | N | String | `#ffffff` |  Set Background CSS Color when image background transparent. Valid when `logoBackgroundTransparent` is `false` | 
 | Backgroud Image options|  ---|--- |---|---|
