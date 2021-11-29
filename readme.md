@@ -252,8 +252,13 @@ var qrcode = new QRCode(canvas_object, options_object);
    
     // ===== Binary(hex) data mode
     /*
-    binary: false // Whether it is binary mode, default is text mode. 
+    binary: false, // Whether it is binary mode, default is text mode. 
     */ 
+   
+    // =====  UTF-8 without BOM
+    /*
+    utf8WithoutBOM: true
+    */      
 }
 ```
 
@@ -327,6 +332,8 @@ var qrcode = new QRCode(canvas_object, options_object);
 | **version** | N | Number | `0` | The symbol versions of QR Code range from Version `1` to Version `40`. default 0 means automatically choose the closest version based on the text length. [Information capacity and versions of QR Codes](https://www.qrcode.com/en/about/version.html)  **NOTE**: If you set a value less than the minimum version available for text, the minimum version is automatically used. | 
 | Tooltip options| --- | ---|---|---|
 | **tooltip** | N | Boolean | `false` | Whether set the QRCode Text as the title attribute value of the QRCode div. | 
+| UTF-8 options| --- | ---|---|---|
+| **utf8WithoutBOM** | N | Boolean | `true` | Use UTF-8 without BOM. set to `false` value will use BOM in UFT-8.|
 | Binary(hex) data model options| --- | ---|---|---|
 | **binary** | N | Boolean | `false` | Whether it is binary mode, default is text mode.  | 
 

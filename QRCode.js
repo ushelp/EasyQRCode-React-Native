@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 4.0.3
+ * Version 4.0.4
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -20,7 +20,7 @@ import Canvas, {
     Image as CanvasImage
 } from 'react-native-canvas';
 
-function QR8bitByte(data, binary) {
+function QR8bitByte(data, binary, utf8WithoutBOM) {
     this.mode = QRMode.MODE_8BIT_BYTE;
     this.data = data;
     this.parsedData = [];
@@ -55,7 +55,7 @@ function QR8bitByte(data, binary) {
 
     this.parsedData = Array.prototype.concat.apply([], this.parsedData);
 
-    if (this.parsedData.length != this.data.length) {
+    if (!utf8WithoutBOM && this.parsedData.length != this.data.length) {
         this.parsedData.unshift(191);
         this.parsedData.unshift(187);
         this.parsedData.unshift(239);
@@ -83,8 +83,8 @@ function QRCodeModel(typeNumber, errorCorrectLevel) {
 }
 
 QRCodeModel.prototype = {
-    addData: function(data, binary) {
-        var newData = new QR8bitByte(data, binary);
+    addData: function(data, binary, utf8WithoutBOM) {
+        var newData = new QR8bitByte(data, binary, utf8WithoutBOM);
         this.dataList.push(newData);
         this.dataCache = null;
     },
@@ -1533,8 +1533,10 @@ function QRCode(canvas, vOption) {
         version: 0, // The symbol versions of QR Code range from Version 1 to Version 40. default 0 means automatically choose the closest version based on the text length.
 
         // ==== binary(hex) data mode
-        binary: false // Whether it is binary mode, default is text mode. 
+        binary: false, // Whether it is binary mode, default is text mode. 
 
+        // UTF-8 without BOM
+        utf8WithoutBOM: true
 
     };
     if (typeof vOption === 'string') {
@@ -1631,7 +1633,7 @@ function QRCode(canvas, vOption) {
 
     this._oQRCode = null;
     this._oQRCode = new QRCodeModel(_getTypeNumber(this._htOption.text, this._htOption), this._htOption.correctLevel);
-    this._oQRCode.addData(this._htOption.text, this._htOption.binary);
+    this._oQRCode.addData(this._htOption.text, this._htOption.binary, this._htOption.utf8WithoutBOM);
     this._oQRCode.make();
     this._show();
 }
@@ -1651,7 +1653,7 @@ QRCode.prototype._show = function() {
 QRCode.prototype.makeCode = function(sText) {
 
     this._oQRCode = new QRCodeModel(_getTypeNumber(sText, this._htOption), this._htOption.correctLevel);
-    this._oQRCode.addData(sText, this._htOption.binary);
+    this._oQRCode.addData(sText, this._htOption.binary, this._htOption.utf8WithoutBOM);
     this._oQRCode.make();
     if (this._htOption.tooltip) {
         this._el.title = sText;
