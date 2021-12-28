@@ -1,6 +1,6 @@
 {
     "name": "easyqrcode-react-native",
-    "version": "4.0.4",
+    "version": "4.0.5",
     "description": "React Native QRCode generation component. Can get standard base64 image data url text or save image to file. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.",
     "main": "QRCode.min.js",
     "scripts": {},
