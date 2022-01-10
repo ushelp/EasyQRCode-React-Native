@@ -36,7 +36,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "react-native-canvas": "^0.1.37",
+        "react-native-canvas": "^0.1.38",
         "react-native-svg": "^12.1.1"
     },
     "devDependencies": {},
