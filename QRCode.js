@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 4.0.5
+ * Version 4.0.6
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -1080,7 +1080,7 @@ Drawing.prototype.draw = function(oQRCode) {
         _htOption.height -= _htOption.titleHeight;
         _htOption.titleHeight = 0;
     }
-
+    
     var nCount = oQRCode.getModuleCount();
     var nWidth = Math.round(_htOption.width / nCount);
     var nHeight = Math.round((_htOption.height - _htOption.titleHeight) / nCount);
@@ -1093,10 +1093,10 @@ Drawing.prototype.draw = function(oQRCode) {
 
     _htOption.quietZone = Math.round(_htOption.quietZone);
 
-    this._htOption.width = nWidth * nCount;
-    this._htOption.height = nHeight * nCount + _htOption.titleHeight;
-    this._canvas.height = this._htOption.height + this._htOption.quietZone * 2;
-    this._canvas.width = this._htOption.width + this._htOption.quietZone * 2;
+    _htOption.width = nWidth * nCount;
+    _htOption.height = nHeight * nCount + _htOption.titleHeight;
+    this._canvas.height = _htOption.height + _htOption.quietZone * 2; 
+    this._canvas.width = _htOption.width + _htOption.quietZone * 2;
 
     var autoColorDark = _htOption.autoColorDark;
     var autoColorLight = _htOption.autoColorLight;
@@ -1110,7 +1110,7 @@ Drawing.prototype.draw = function(oQRCode) {
 
     var _oContext = this._oContext;
     _oContext.lineWidth = 0;
-    _oContext.fillStyle = this._htOption.colorLight;
+    _oContext.fillStyle = _htOption.colorLight;
     _oContext.fillRect(0, 0, this._canvas.width, this._canvas.height);
 
 
@@ -1322,7 +1322,6 @@ Drawing.prototype.draw = function(oQRCode) {
 
         if (_htOption.logo) {
             var logoImg = new CanvasImage(t._canvas);
-            var _this = this;
 
             function generateLogoImg(img) {
                 var imgContainerW = Math.round(_htOption.width / 3.5);
@@ -1399,12 +1398,12 @@ Drawing.prototype.draw = function(oQRCode) {
                 _oContext.drawImage(img, imgContainerX + (imgContainerW - imgW) / 2, imgContainerY +
                     (imgContainerH - imgH) / 2, imgW, imgH);
 
-                _this._bIsPainted = true;
+                t._bIsPainted = true;
 
                 drawQuietZoneColor();
                 if (_htOption.onRenderingEnd) {
                     _htOption.onRenderingEnd(_htOption, function() {
-                        return _this._canvas.toDataURL();
+                        return t._canvas.toDataURL();
                     });
                 }
             }
@@ -1419,11 +1418,11 @@ Drawing.prototype.draw = function(oQRCode) {
             logoImg.src = _htOption.logo;
         } else {
             drawQuietZoneColor();
-            this._bIsPainted = true;
+            t._bIsPainted = true;
 
             if (_htOption.onRenderingEnd) {
                 _htOption.onRenderingEnd(_htOption, function() {
-                    return _this._canvas.toDataURL();
+                    return t._canvas.toDataURL();
                 });
             }
         }
