@@ -3,7 +3,7 @@
  *
  * React Native QRCode generation component. Can generate standard QRCode image or base64 image data url text. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.
  *
- * Version 4.0.8
+ * Version 4.0.9
  *
  * @author [ inthinkcolor@gmail.com ]
  *
@@ -1076,7 +1076,7 @@ Drawing.prototype.draw = function(oQRCode) {
     if (_htOption.onRenderingStart) {
         _htOption.onRenderingStart(_htOption)
     }
-    
+
     var nCount = oQRCode.getModuleCount();
     var nWidth = Math.round(_htOption.width / nCount);
     var nHeight = Math.round((_htOption.height - _htOption.titleHeight) / nCount);
@@ -1091,7 +1091,7 @@ Drawing.prototype.draw = function(oQRCode) {
 
     _htOption.width = nWidth * nCount;
     _htOption.height = nHeight * nCount + _htOption.titleHeight;
-    this._canvas.height = _htOption.height + _htOption.quietZone * 2; 
+    this._canvas.height = _htOption.height + _htOption.quietZone * 2;
     this._canvas.width = _htOption.width + _htOption.quietZone * 2;
 
     var autoColorDark = _htOption.autoColorDark;
@@ -1108,7 +1108,7 @@ Drawing.prototype.draw = function(oQRCode) {
     _oContext.lineWidth = 0;
     _oContext.fillStyle = _htOption.colorLight;
     _oContext.fillRect(0, 0, this._canvas.width, this._canvas.height);
-
+    _oContext.clearRect(_htOption.quietZone, _htOption.quietZone, _htOption.width, _htOption.titleHeight);
 
     var t = this;
 
@@ -1300,7 +1300,8 @@ Drawing.prototype.draw = function(oQRCode) {
 
         if (_htOption.title) {
             _oContext.fillStyle = _htOption.titleBackgroundColor;
-            _oContext.fillRect(0, 0, t._canvas.width, _htOption.titleHeight + this._htOption.quietZone);
+            // _oContext.fillRect(0, 0, t._canvas.width, _htOption.titleHeight + this._htOption.quietZone);
+            _oContext.fillRect(_htOption.quietZone, _htOption.quietZone, _htOption.width, _htOption.titleHeight);
 
             _oContext.font = _htOption.titleFont;
             _oContext.fillStyle = _htOption.titleColor;
@@ -1546,7 +1547,7 @@ function QRCode(canvas, vOption) {
             this._htOption[i] = vOption[i];
         }
     }
-    
+
     if (!this._htOption.title && !this._htOption.subTitle) {
         this._htOption.titleHeight = 0;
     }
