@@ -37,6 +37,8 @@ A QRCode component for React Native. Support Dot style, Logo, Background image, 
 - **English**
 
     - Required Patterns that support dot style
+
+	- Support unicode character set:  `😊❤️👍👨‍💻 Hello, こんにちは, こんにちは, Γεια, Привет, नमस्ते, สวัสดี, Привіт, سلام, Здравей, ສະບາຍດີ, Përshëndetje, Բարեւ, 你好`
  
     - Support for Quiet Zone settings
 	
@@ -59,6 +61,8 @@ A QRCode component for React Native. Support Dot style, Logo, Background image, 
 - **中文**
 
     - 支持点形风格的 Required Patterns
+
+	- 支持 Unicode 字符集:  `😊❤️👍👨‍💻 Hello, こんにちは, こんにちは, Γεια, Привет, नमस्ते, สวัสดี, Привіт, سلام, Здравей, ສະບາຍດີ, Përshëndetje, Բարեւ, 你好`
 
     - 支持 Quiet Zone 设置
 	
