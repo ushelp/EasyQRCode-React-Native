@@ -1,46 +1,46 @@
 {
-    "name": "easyqrcode-react-native",
-    "version": "4.0.10",
-    "description": "React Native QRCode generation component. Can get standard base64 image data url text or save image to file. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.",
-    "main": "QRCode.min.js",
-    "scripts": {},
-    "homepage": "https://github.com/ushelp/EasyQRCode-React-Native#readme",
-    "author": "Ray <inthinkcolor@gmail.com>",
-    "directories": {
-        "dist": "dist",
-        "src": "src",
-        "demo": "demo"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ushelp/EasyQRCode-React-Native.git"
-    },
-    "keywords": [
-        "react native qrcode",
-        "react native easyqrcode",
-        "qrcode",
-        "qrcodejs",
-        "react native",
-        "reactnative",
-        "rn qrcode",
-        "reactnative qrcode",
-        "qrcode react native",
-        "javascript qrcode",
-        "qrcode logo",
-        "qrcode generator",
-        "easyqrcode",
-        "easyqrcodejs"
-    ],
-    "bugs": {
-        "url": "https://github.com/ushelp/EasyQRCode-React-Native/issues "
-    },
-    "license": "MIT",
-    "dependencies": {
-        "react-native-canvas": "^0.1.38",
-        "react-native-svg": "^12.1.1"
-    },
-    "devDependencies": {},
-    "peerDependencies": {
-        "react-native-webview": ">=5.10.0 || >=6.1.0"
-    }
+  "name": "easyqrcode-react-native",
+  "version": "4.1.0",
+  "description": "React Native QRCode generation component. Can get standard base64 image data url text or save image to file. Cross-browser QRCode generator for pure javascript. Support Dot style, Logo, Background image, Colorful, Title etc. settings. support binary mode.",
+  "main": "QRCode.min.js",
+  "scripts": {},
+  "homepage": "https://github.com/ushelp/EasyQRCode-React-Native#readme",
+  "author": "Ray <inthinkcolor@gmail.com>",
+  "directories": {
+    "dist": "dist",
+    "src": "src",
+    "demo": "demo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ushelp/EasyQRCode-React-Native.git"
+  },
+  "keywords": [
+    "react native qrcode",
+    "react native easyqrcode",
+    "qrcode",
+    "qrcodejs",
+    "react native",
+    "reactnative",
+    "rn qrcode",
+    "reactnative qrcode",
+    "qrcode react native",
+    "javascript qrcode",
+    "qrcode logo",
+    "qrcode generator",
+    "easyqrcode",
+    "easyqrcodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/ushelp/EasyQRCode-React-Native/issues "
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react-native-canvas": "^0.1.39",
+    "react-native-svg": "^13.14.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "react-native-webview": ">=5.10.0 || >=6.1.0"
+  }
 }
